@@ -26,7 +26,11 @@ gem 'dotenv-rails'
 # Use Devise for user auth
 gem 'devise', github: 'heartcombo/devise'
 # Use omniauth gem for oauth2 support
-gem 'omniauth'
+gem 'omniauth', github: 'omniauth/omniauth'
+# Use omniauth-twitter for Twitter login support
+gem 'omniauth-twitter'
+# Use activerecord-session_store for cookie workaround (I think???)
+gem 'activerecord-session_store'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
