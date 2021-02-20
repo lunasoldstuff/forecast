@@ -21,6 +21,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Use dotenv-rails for loading .env files
+gem 'dotenv-rails'
+# Use Devise for user auth
+gem 'devise', github: 'heartcombo/devise'
+# Use omniauth gem for oauth2 support
+gem 'omniauth'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
