@@ -11,7 +11,6 @@
       </p>
     </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "mt-8 space-y-6"}) do |f| %>
-      <input type="hidden" name="remember" value="true">
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
           <%= f.label :email, :class => "sr-only" %>
@@ -25,8 +24,10 @@
 
       <div class="flex items-center justify-between">
         <div class="flex items-center">
-          <%= f.check_box :remember, :class => "h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" %>
-          <%= f.label :remember, :class => "ml-2 block text-sm text-gray-900" %>
+          <input id="remember" name="remember" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+          <label for="remember" class="ml-2 block text-sm text-gray-900">
+            Remember me
+          </label>
         </div>
 
         <div class="text-sm">
