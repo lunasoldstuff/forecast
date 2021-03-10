@@ -16,11 +16,11 @@ ports:
     onOpen: ignore
 
 tasks:
-  - name: Forcase Server
+  - name: Forcast Server
     before: |
       redis-server &
     init: >
-      cp .env.sample .env && gem install solargraph && bin/setup
+      cp .env.example .env && gem install solargraph && bin/setup
     command: >
       bin/startup
   - command: >
