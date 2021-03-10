@@ -36,7 +36,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -61,4 +61,12 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.hosts << ENV["APP_DOMAIN"] unless ENV["APP_DOMAIN"].nil?
+  if (gitpod_workspace_url = ENV["GITPOD_WORKSPACE_URL"])
+    config.hosts << /.*#{URI.parse(gitpod_workspace_url).host}/
+  end
+  config.app_domain = ENV["APP_DOMAIN"] || "localhost:3000"
 end
+
+Rails.application.routes.default_url_options = { host: Rails.application.config.app_domain }
