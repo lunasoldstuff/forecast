@@ -1,2 +1,2 @@
-web: rails s -p 8080
+web: rails s
 webpacker:  ./bin/webpack-dev-server
