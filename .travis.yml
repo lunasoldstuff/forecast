@@ -15,5 +15,3 @@ before_script:
 script:
   - bundle exec rake test
   - bundle exec rake test:system
-after_script:
-  - bash <(curl -s https://codecov.io/bash)
