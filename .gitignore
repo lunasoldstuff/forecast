@@ -43,3 +43,6 @@ yarn-debug.log*
 .env.development.local
 .env.test
 .env.test.local
+
+# codecov
+coverage/
